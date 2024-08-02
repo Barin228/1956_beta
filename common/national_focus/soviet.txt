@@ -862,8 +862,8 @@ focus_tree = {
 			else = {
 				hidden_effect = {
 					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
+					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
+					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier_alt }
 				}
 			}
 			custom_effect_tooltip = SOV_shift_to_armaments_production_ns_tt
@@ -7927,6 +7927,9 @@ focus_tree = {
 					remove_idea = SOV_politicized_military_humanism
 					add_idea = SOV_politicized_military_battle_priests
 				}
+			}
+			else = {	
+				add_ideas = SOV_politicized_military_battle_priests
 			}
 		}
 	}
@@ -18905,6 +18908,16 @@ focus_tree = {
 				has_country_flag = SOV_breakaway_country_flag
 			}
 		}
+		bypass = {
+			AND = {
+				NOT = {
+					any_country = {
+						has_country_flag = SOV_breakaway_country_flag
+					}
+				}
+				has_global_flag = SOV_soviet_civil_war_over
+			}
+		}
 		
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
@@ -19004,7 +19017,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
 		available = {
-			has_government = neutrality
+			NOT = { has_government = communism }
 			has_full_control_of_state = 219
 		}
 
@@ -19035,7 +19048,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY}
 
 		available = {
-			has_government = neutrality
+			NOT = { has_government = communism }
 			has_full_control_of_state = 219
 		}
 
@@ -19065,7 +19078,7 @@ focus_tree = {
 		}
 		
 		available = {
-			has_government = neutrality
+			NOT = { has_government = communism }
 			has_global_flag = SOV_soviet_civil_war_over
 		}
 		
@@ -19121,7 +19134,7 @@ focus_tree = {
 		}
 		
 		available = {
-			has_government = neutrality
+			NOT = { has_government = communism }
 			communism < 0.5
 		}
 
@@ -19160,7 +19173,7 @@ focus_tree = {
 		}
 		
 		available = {
-			has_government = neutrality
+			NOT = { has_government = communism }
 			communism < 0.33
 		}
 
